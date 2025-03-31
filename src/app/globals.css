@@ -7,3 +7,11 @@
   --color-jardin-verde-claro: #A6B777;
   --color-jardin-beige: #E9E5D6;
 }
+
+.main-button {
+  @apply inline-flex items-center justify-center px-4 py-2 rounded-md text-sm font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 transition-colors bg-jardin-verde-oliva text-white border border-transparent hover:bg-jardin-verde-oliva/90;
+}
+
+.ghost-button {
+  @apply inline-flex items-center justify-center px-4 py-2 rounded-md text-sm font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 transition-colors bg-transparent text-jardin-verde-oliva border border-jardin-verde-oliva hover:bg-jardin-verde-oliva hover:text-white;
+}
