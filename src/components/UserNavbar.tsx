@@ -4,7 +4,8 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import Cookies from 'js-cookie'
-import { jwtDecode } from 'jwt-decode';
+import { jwtDecode } from 'jwt-decode'
+import { useRouter } from 'next/navigation'
 import logoIcon from '@/app/img/logo/logo_icon.png'
 
 interface TokenPayload {
@@ -16,6 +17,7 @@ interface TokenPayload {
 export default function UserNavbar() {
   const [userEmail, setUserEmail] = useState<string | null>(null)
   const [isOpen, setIsOpen] = useState(false)
+  const router = useRouter()
 
   useEffect(() => {
     const token = Cookies.get('token')
@@ -28,6 +30,11 @@ export default function UserNavbar() {
       }
     }
   }, [])
+
+  const handleLogout = () => {
+    Cookies.remove('token')
+    router.push('/')
+  }
 
   return (
     <nav className="bg-jardin-verde-claro py-11">
@@ -53,10 +60,13 @@ export default function UserNavbar() {
           <Link href="#" className="hover:text-jardin-marron-oscuro">Checkout</Link>
         </div>
 
-        {/* Sección derecha: email del usuario y carrito */}
+        {/* Sección derecha: email, carrito y logout */}
         <div className="hidden md:flex items-center space-x-4">
           <span className="hover:text-jardin-marron-oscuro">{userEmail}</span>
           <Link href="/cart" className="hover:text-jardin-marron-oscuro">Carrito</Link>
+          <button onClick={handleLogout} className="hover:text-jardin-marron-oscuro">
+            Cerrar sesión
+          </button>
         </div>
 
         {/* Botón Hamburguesa (móvil) */}
@@ -88,6 +98,9 @@ export default function UserNavbar() {
               <div className="border-t border-zinc-300 pt-4 flex flex-col space-y-4">
                 <span className="hover:text-jardin-marron-oscuro">{userEmail}</span>
                 <Link href="/cart" className="hover:text-jardin-marron-oscuro">Carrito</Link>
+                <button onClick={handleLogout} className="hover:text-jardin-marron-oscuro text-left">
+                  Cerrar sesión
+                </button>
               </div>
             </div>
           </div>
