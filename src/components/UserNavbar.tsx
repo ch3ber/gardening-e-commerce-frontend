@@ -57,7 +57,7 @@ export default function UserNavbar() {
         <div className="hidden md:flex items-center space-x-6">
           <Link href="/catalogo" className="hover:text-jardin-marron-oscuro">Catálogo</Link>
           <Link href="#" className="hover:text-jardin-marron-oscuro">Nosotros</Link>
-          <Link href="#" className="hover:text-jardin-marron-oscuro">Checkout</Link>
+          <Link href="/checkout" className="hover:text-jardin-marron-oscuro">Checkout</Link>
         </div>
 
         {/* Sección derecha: email, carrito y logout */}
@@ -94,7 +94,7 @@ export default function UserNavbar() {
             <div className="flex flex-col p-4 space-y-4">
               <Link href="/catalogo" className="hover:text-jardin-marron-oscuro">Catálogo</Link>
               <Link href="#" className="hover:text-jardin-marron-oscuro">Nosotros</Link>
-              <Link href="#" className="hover:text-jardin-marron-oscuro">Checkout</Link>
+              <Link href="/checkout" className="hover:text-jardin-marron-oscuro">Checkout</Link>
               <div className="border-t border-zinc-300 pt-4 flex flex-col space-y-4">
                 <span className="hover:text-jardin-marron-oscuro">{userEmail}</span>
                 <Link href="/cart" className="hover:text-jardin-marron-oscuro">Carrito</Link>
