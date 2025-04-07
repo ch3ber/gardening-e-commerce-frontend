@@ -30,7 +30,7 @@ export default function Navbar() {
 
         {/* Menú de escritorio */}
         <div className="hidden md:flex items-center space-x-6">
-          <Link href="#" className="hover:text-jardin-marron-oscuro">
+          <Link href="/catalogo" className="hover:text-jardin-marron-oscuro">
             Catálogo
           </Link>
           <Link href="#" className="hover:text-jardin-marron-oscuro">
@@ -43,10 +43,10 @@ export default function Navbar() {
 
         {/* Sección derecha (login / signup) en escritorio */}
         <div className="hidden md:flex items-center space-x-4">
-          <Link href="#" className="hover:text-jardin-marron-oscuro">
+          <Link href="/login" className="hover:text-jardin-marron-oscuro">
             login
           </Link>
-          <Link href="#" className="hover:text-jardin-marron-oscuro">
+          <Link href="/signup" className="hover:text-jardin-marron-oscuro">
             signup
           </Link>
         </div>
@@ -75,7 +75,7 @@ export default function Navbar() {
         {isOpen && (
           <div className="absolute top-28 left-0 w-full bg-jardin-beige border-t border-zinc-300 md:hidden">
             <div className="flex flex-col p-4 space-y-4">
-              <Link href="#" className="hover:text-jardin-marron-oscuro">
+              <Link href="/catalogo" className="hover:text-jardin-marron-oscuro">
                 Catálogo
               </Link>
               <Link href="#" className="hover:text-jardin-marron-oscuro">
@@ -85,10 +85,10 @@ export default function Navbar() {
                 Checkout
               </Link>
               <div className="border-t border-zinc-300 pt-4 flex flex-col space-y-4">
-                <Link href="#" className="hover:text-jardin-marron-oscuro">
+                <Link href="/login" className="hover:text-jardin-marron-oscuro">
                   login
                 </Link>
-                <Link href="#" className="hover:text-jardin-marron-oscuro">
+                <Link href="/signup" className="hover:text-jardin-marron-oscuro">
                   signup
                 </Link>
               </div>

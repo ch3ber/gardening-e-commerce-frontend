@@ -1,15 +1,6 @@
+import { Product } from '@/models/product'
 import Image from 'next/image'
 import Link from 'next/link'
-
-export interface Product {
-  id: string
-  name: string
-  description: string
-  price: number
-  imageUrl?: string
-  detailsUrl: string
-  buyUrl: string
-}
 
 interface ProductCardProps {
   product: Product
