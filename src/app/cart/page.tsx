@@ -72,7 +72,7 @@ export default function CartPage() {
           ))}
         </ul>
       )}
-      <p><b>Total:</b> ${cart.items.map(item => item.price).reduce((acc, current) => acc + current, 0)}</p>
+      <p><b>Total:</b> ${cart.items.reduce((acc, item) => acc + item.price * item.quantity, 0)}</p>
       {cart.items.length > 0 && (
         <button onClick={handleClear} className="ghost-button mt-4">
           Vaciar Carrito
