@@ -8,7 +8,7 @@ export const getProducts = (): Product[] => {
       description: "Maceta de cerámica con diseño atemporal, ideal para interiores y exteriores.",
       price: 199,
       imageUrl: "https://placehold.co/200x160.svg?text=Maceta+1",
-      detailsUrl: "/productos/1",
+      detailsUrl: "/product/1",
       buyUrl: "/comprar/1",
     },
     {
@@ -17,7 +17,7 @@ export const getProducts = (): Product[] => {
       description: "Diseño minimalista que se adapta a ambientes modernos.",
       price: 249,
       imageUrl: "https://placehold.co/200x160.svg?text=Maceta+2",
-      detailsUrl: "/productos/2",
+      detailsUrl: "/product/2",
       buyUrl: "/comprar/2",
     },
     {
@@ -26,7 +26,7 @@ export const getProducts = (): Product[] => {
       description: "Herramienta versátil para diversas tareas de jardinería.",
       price: 99,
       imageUrl: "https://placehold.co/200x160.svg?text=Herramienta+3",
-      detailsUrl: "/productos/3",
+      detailsUrl: "/product/3",
       buyUrl: "/comprar/3",
     },
     {
@@ -35,7 +35,7 @@ export const getProducts = (): Product[] => {
       description: "Conjunto completo con herramientas y accesorios para el cuidado de tus plantas.",
       price: 349,
       imageUrl: "https://placehold.co/200x160.svg?text=Set+de+Jardiner%C3%ADa+4",
-      detailsUrl: "/productos/4",
+      detailsUrl: "/product/4",
       buyUrl: "/comprar/4",
     },
     {
@@ -44,7 +44,7 @@ export const getProducts = (): Product[] => {
       description: "Regadera ergonómica para un riego preciso y cómodo.",
       price: 129,
       imageUrl: "https://placehold.co/200x160.svg?text=Regadera+5",
-      detailsUrl: "/productos/5",
+      detailsUrl: "/product/5",
       buyUrl: "/comprar/5",
     },
     {
@@ -53,7 +53,7 @@ export const getProducts = (): Product[] => {
       description: "Sistema modular para crear jardines verticales en espacios reducidos.",
       price: 499,
       imageUrl: "https://placehold.co/200x160.svg?text=Jard%C3%ADn+Vertical+6",
-      detailsUrl: "/productos/6",
+      detailsUrl: "/product/6",
       buyUrl: "/comprar/6",
     },
     {
@@ -62,7 +62,7 @@ export const getProducts = (): Product[] => {
       description: "Fabricada con materiales reciclados para un jardín sostenible.",
       price: 179,
       imageUrl: "https://placehold.co/200x160.svg?text=Maceta+7",
-      detailsUrl: "/productos/7",
+      detailsUrl: "/product/7",
       buyUrl: "/comprar/7",
     },
     {
@@ -71,7 +71,7 @@ export const getProducts = (): Product[] => {
       description: "Todo lo que necesitas para iniciar tu propio huerto en casa.",
       price: 399,
       imageUrl: "https://placehold.co/200x160.svg?text=Kit+de+Huerto+8",
-      detailsUrl: "/productos/8",
+      detailsUrl: "/product/8",
       buyUrl: "/comprar/8",
     },
     {
@@ -80,7 +80,7 @@ export const getProducts = (): Product[] => {
       description: "Luces LED de bajo consumo para resaltar la belleza de tu jardín.",
       price: 159,
       imageUrl: "https://placehold.co/200x160.svg?text=Iluminaci%C3%B3n+9",
-      detailsUrl: "/productos/9",
+      detailsUrl: "/product/9",
       buyUrl: "/comprar/9",
     },
     {
@@ -89,7 +89,7 @@ export const getProducts = (): Product[] => {
       description: "Banco elegante y resistente, perfecto para descansar en tu jardín.",
       price: 799,
       imageUrl: "https://placehold.co/200x160.svg?text=Banco+10",
-      detailsUrl: "/productos/10",
+      detailsUrl: "/product/10",
       buyUrl: "/comprar/10",
     },
     {
@@ -98,7 +98,7 @@ export const getProducts = (): Product[] => {
       description: "Maceta de cerámica con diseño atemporal, ideal para interiores y exteriores.",
       price: 199,
       imageUrl: "https://placehold.co/200x160.svg?text=Maceta+1",
-      detailsUrl: "/productos/1",
+      detailsUrl: "/product/1",
       buyUrl: "/comprar/1",
     },
     {
@@ -107,7 +107,7 @@ export const getProducts = (): Product[] => {
       description: "Diseño minimalista que se adapta a ambientes modernos.",
       price: 249,
       imageUrl: "https://placehold.co/200x160.svg?text=Maceta+2",
-      detailsUrl: "/productos/2",
+      detailsUrl: "/product/2",
       buyUrl: "/comprar/2",
     },
     {
@@ -116,7 +116,7 @@ export const getProducts = (): Product[] => {
       description: "Herramienta versátil para diversas tareas de jardinería.",
       price: 99,
       imageUrl: "https://placehold.co/200x160.svg?text=Herramienta+3",
-      detailsUrl: "/productos/3",
+      detailsUrl: "/product/3",
       buyUrl: "/comprar/3",
     },
     {
@@ -125,7 +125,7 @@ export const getProducts = (): Product[] => {
       description: "Conjunto completo con herramientas y accesorios para el cuidado de tus plantas.",
       price: 349,
       imageUrl: "https://placehold.co/200x160.svg?text=Set+de+Jardiner%C3%ADa+4",
-      detailsUrl: "/productos/4",
+      detailsUrl: "/product/4",
       buyUrl: "/comprar/4",
     },
     {
@@ -134,7 +134,7 @@ export const getProducts = (): Product[] => {
       description: "Regadera ergonómica para un riego preciso y cómodo.",
       price: 129,
       imageUrl: "https://placehold.co/200x160.svg?text=Regadera+5",
-      detailsUrl: "/productos/5",
+      detailsUrl: "/product/5",
       buyUrl: "/comprar/5",
     },
     {
@@ -143,7 +143,7 @@ export const getProducts = (): Product[] => {
       description: "Sistema modular para crear jardines verticales en espacios reducidos.",
       price: 499,
       imageUrl: "https://placehold.co/200x160.svg?text=Jard%C3%ADn+Vertical+6",
-      detailsUrl: "/productos/6",
+      detailsUrl: "/product/6",
       buyUrl: "/comprar/6",
     },
     {
@@ -152,7 +152,7 @@ export const getProducts = (): Product[] => {
       description: "Fabricada con materiales reciclados para un jardín sostenible.",
       price: 179,
       imageUrl: "https://placehold.co/200x160.svg?text=Maceta+7",
-      detailsUrl: "/productos/7",
+      detailsUrl: "/product/7",
       buyUrl: "/comprar/7",
     },
     {
@@ -161,7 +161,7 @@ export const getProducts = (): Product[] => {
       description: "Todo lo que necesitas para iniciar tu propio huerto en casa.",
       price: 399,
       imageUrl: "https://placehold.co/200x160.svg?text=Kit+de+Huerto+8",
-      detailsUrl: "/productos/8",
+      detailsUrl: "/product/8",
       buyUrl: "/comprar/8",
     },
     {
@@ -170,7 +170,7 @@ export const getProducts = (): Product[] => {
       description: "Luces LED de bajo consumo para resaltar la belleza de tu jardín.",
       price: 159,
       imageUrl: "https://placehold.co/200x160.svg?text=Iluminaci%C3%B3n+9",
-      detailsUrl: "/productos/9",
+      detailsUrl: "/product/9",
       buyUrl: "/comprar/9",
     },
     {
@@ -179,7 +179,7 @@ export const getProducts = (): Product[] => {
       description: "Banco elegante y resistente, perfecto para descansar en tu jardín.",
       price: 799,
       imageUrl: "https://placehold.co/200x160.svg?text=Banco+10",
-      detailsUrl: "/productos/10",
+      detailsUrl: "/product/10",
       buyUrl: "/comprar/10",
     },
   ];
