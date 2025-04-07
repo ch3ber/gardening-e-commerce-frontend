@@ -1,12 +1,30 @@
+'use client'
+
 import { Product } from '@/models/product'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
+import { addItemToCart, CartItem } from '@/services/localCartService'
 
 interface ProductCardProps {
   product: Product
 }
 
 export default function ProductCard({ product }: ProductCardProps) {
+  const router = useRouter()
+
+  const handleBuy = () => {
+    const productToAdd: CartItem = {
+      productId: Number(product.id),
+      quantity: 1,
+      ...product,
+      imageUrl: product.imageUrl || '' // Provide a default value for imageUrl
+    }
+
+    addItemToCart(productToAdd);
+    router.push('/checkout')
+  }
+
   return (
     <div className="max-w-sm bg-white rounded-md shadow p-4 mx-auto flex flex-col justify-between items-stretch">
       {/* Imagen del producto */}
@@ -31,14 +49,15 @@ export default function ProductCard({ product }: ProductCardProps) {
         ${product.price} MXN
       </p>
 
-      {/* Enlaces con estilo de botón */}
+      {/* Acciones */}
       <div className="w-full flex flex-col space-y-2 md:flex-row md:space-y-0 md:justify-between md:px-2">
         <Link href={product.detailsUrl} className="ghost-button">
           Ver detalles
         </Link>
-        <Link href={product.buyUrl} className="main-button">
+        {/* Botón para comprar (agregar al carrito y redirigir) */}
+        <button onClick={handleBuy} className="main-button">
           Comprar
-        </Link>
+        </button>
       </div>
     </div>
   )
