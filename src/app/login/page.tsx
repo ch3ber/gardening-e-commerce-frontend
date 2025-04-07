@@ -4,6 +4,8 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Cookies from "js-cookie";
+import { mergeGuestCartWithUserCart } from "@/services/localCartService";
+import { jwtDecode } from "jwt-decode";
 
 export default function Login() {
   const router = useRouter();
@@ -31,6 +33,15 @@ export default function Login() {
       const data = await res.json();
       // Guardar el token en una cookie (válido por 1 día, sameSite lax)
       Cookies.set("token", data.token, { expires: 1, sameSite: "lax" });
+
+      interface TokenPayload {
+        id: string;
+        email: string;
+        rol: string;
+      }
+
+      const decoded = jwtDecode<TokenPayload>(data.token);
+      mergeGuestCartWithUserCart(decoded.email);
 
       // Redirige al home
       router.push("/");

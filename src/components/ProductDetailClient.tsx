@@ -1,5 +1,6 @@
 'use client'
 
+import { addItemToCart, CartItem } from '@/services/localCartService'
 import Image from 'next/image'
 import { useState } from 'react'
 
@@ -18,10 +19,13 @@ export default function ProductDetailClient({ product }: { product: Product }) {
   const handleDecrease = () => setQuantity((prev) => (prev > 0 ? prev - 1 : 0))
 
   const handleAddToCart = () => {
-    // Lógica para agregar al carrito, por ejemplo:
-    // - Llamar a un contexto global
-    // - Hacer un fetch a tu backend
-    // - etc.
+    const productToAdd: CartItem = {
+      productId: Number(product.id),
+      quantity,
+      ...product
+    }
+
+    addItemToCart(productToAdd);
     alert(`Agregado ${quantity} de ${product.name} al carrito!`)
   }
 
