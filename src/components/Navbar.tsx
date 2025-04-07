@@ -23,10 +23,10 @@ export default function Navbar() {
         `}>
 
         {/* Logo y nombre de marca */}
-        <div className="flex items-center space-x-2">
+        <Link href="/" className="flex items-center space-x-2">
           <Image src={logoIcon} alt='Logo empresa' className='w-10' />
           <span className="font-bold text-xl">Viva Garden</span>
-        </div>
+        </Link>
 
         {/* Menú de escritorio */}
         <div className="hidden md:flex items-center space-x-6">
