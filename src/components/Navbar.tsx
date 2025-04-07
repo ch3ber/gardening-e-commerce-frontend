@@ -1,17 +1,40 @@
-'use client' // si estás usando la carpeta app/ con Next.js 13+ para componentes interactivos
+'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import Cookies from 'js-cookie'
+import { jwtDecode } from 'jwt-decode';
+
 
 import logoIcon from '@/app/img/logo/logo_icon.png'
 
+interface TokenPayload {
+  id: string;
+  email: string;
+  rol: string;
+}
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
+  const [userEmail, setUserEmail] = useState<string | null>(null)
+
+  useEffect(() => {
+    const token = Cookies.get('token')
+    if (token) {
+      try {
+        const decoded = jwtDecode<TokenPayload>(token)
+        setUserEmail(decoded.email)
+        console.log("Token decodificado:", decoded)
+      } catch (error) {
+        console.error("Error decodificando el token:", error)
+      }
+    }
+  }, [])
 
   return (
-    <nav className={`bg-jardin-verde-claro py-11`} >
-      <div className={`
+    <nav className="bg-jardin-verde-claro py-11">
+      <div className="
           bg-jardin-beige
           text-zinc-800
           border-4
@@ -20,11 +43,10 @@ export default function Navbar() {
           px-4 py-2
           flex items-center justify-between
           mx-auto max-w-[95%] lg:max-w-[90%]
-        `}>
-
+        ">
         {/* Logo y nombre de marca */}
         <Link href="/" className="flex items-center space-x-2">
-          <Image src={logoIcon} alt='Logo empresa' className='w-10' />
+          <Image src={logoIcon} alt="Logo empresa" className="w-10" />
           <span className="font-bold text-xl">Viva Garden</span>
         </Link>
 
@@ -41,14 +63,20 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* Sección derecha (login / signup) en escritorio */}
+        {/* Sección derecha: muestra email si el usuario está logueado */}
         <div className="hidden md:flex items-center space-x-4">
-          <Link href="/login" className="hover:text-jardin-marron-oscuro">
-            login
-          </Link>
-          <Link href="/signup" className="hover:text-jardin-marron-oscuro">
-            signup
-          </Link>
+          {userEmail ? (
+            <span className="hover:text-jardin-marron-oscuro">{userEmail}</span>
+          ) : (
+            <>
+              <Link href="/login" className="hover:text-jardin-marron-oscuro">
+                login
+              </Link>
+              <Link href="/signup" className="hover:text-jardin-marron-oscuro">
+                signup
+              </Link>
+            </>
+          )}
         </div>
 
         {/* Botón Hamburguesa (móvil) */}
@@ -57,7 +85,6 @@ export default function Navbar() {
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle Menu"
         >
-          {/* Ícono (3 líneas) */}
           <svg
             className="w-6 h-6 text-zinc-800"
             fill="none"
@@ -85,12 +112,18 @@ export default function Navbar() {
                 Checkout
               </Link>
               <div className="border-t border-zinc-300 pt-4 flex flex-col space-y-4">
-                <Link href="/login" className="hover:text-jardin-marron-oscuro">
-                  login
-                </Link>
-                <Link href="/signup" className="hover:text-jardin-marron-oscuro">
-                  signup
-                </Link>
+                {userEmail ? (
+                  <span className="hover:text-jardin-marron-oscuro">{userEmail}</span>
+                ) : (
+                  <>
+                    <Link href="/login" className="hover:text-jardin-marron-oscuro">
+                      login
+                    </Link>
+                    <Link href="/signup" className="hover:text-jardin-marron-oscuro">
+                      signup
+                    </Link>
+                  </>
+                )}
               </div>
             </div>
           </div>
