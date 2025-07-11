@@ -1,36 +1,123 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Gardening E-commerce Frontend
 
-## Getting Started
+> A Next.js (App Router) and TypeScript powered storefront for gardening products.
 
-First, run the development server:
+This project serves as the frontend application for a gardening e-commerce platform, showcasing products, cart management (guest & authenticated), and a checkout flow.
+
+## Table of Contents
+
+- [Technologies](#technologies)
+- [Setup & Installation](#setup--installation)
+- [Available Scripts](#available-scripts)
+- [Project Structure](#project-structure)
+- [Styling](#styling)
+- [Services & API](#services--api)
+- [Testing](#testing)
+- [Linting](#linting)
+- [Deployment](#deployment)
+
+## Technologies
+
+- **Next.js** 15 & **React** 19 (App Router)
+- **TypeScript** 5
+- **Tailwind CSS** 4 & PostCSS
+- **ESLint** (Next.js core-web-vitals & TypeScript)
+- **js-cookie** & **jwt-decode** (client-side cart/auth)
+- **pnpm** (package manager)
+
+## Setup & Installation
+
+### Prerequisites
+
+- Node.js v18+ (LTS recommended)
+- pnpm v9+
+
+### Install dependencies
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <repository-url>
+cd gardening-e-commerce-frontend
+pnpm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Available Scripts
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+In the project directory, you can run:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command      | Description                      |
+| ------------ | -------------------------------- |
+| `pnpm dev`   | Runs the app in development mode |
+| `pnpm build` | Builds the app for production    |
+| `pnpm start` | Starts the production server     |
+| `pnpm lint`  | Runs ESLint for code quality     |
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```text
+.
+├── public/             # Static assets (images, icons)
+├── src/
+│   ├── app/            # Next.js App Router pages & layouts
+│   ├── components/     # Reusable React components
+│   ├── services/       # Cart services (local & API handlers)
+│   ├── utils/          # Utility functions (e.g., mock product data)
+│   └── models/         # TypeScript type definitions
+├── postcss.config.mjs  # PostCSS/Tailwind configuration
+├── eslint.config.mjs   # ESLint configuration
+├── next.config.ts      # Next.js configuration
+├── tsconfig.json       # TypeScript compiler options
+├── package.json        # Project metadata & scripts
+└── pnpm-lock.yaml      # pnpm lockfile
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Styling
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Tailwind CSS is configured via `postcss.config.mjs`.
+- Global styles and custom utilities live in `src/app/globals.css`.
+- Theme colors and button utilities use CSS variables & `@apply`.
 
-## Deploy on Vercel
+## Services & API
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Local Cart** (`src/services/localCartService.ts`):
+  manages guest & JWT-authenticated carts in `localStorage`.
+- **API Cart** (`src/services/cartService.ts`):
+  interacts with backend `/api/v1/cart` endpoints (requires a `token` cookie).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Testing
+
+There are no automated tests configured yet. To get started with testing:
+
+- **Unit tests**: Jest & React Testing Library
+- **End-to-End**: Cypress or Playwright
+
+## Linting
+
+ESLint is configured for Next.js best practices:
+
+```bash
+pnpm lint
+```
+
+## Deployment
+
+You can deploy this Next.js application on various platforms. Below are two common approaches.
+
+### Deploy to Vercel (recommended)
+
+1. Import the repository in [Vercel Dashboard](https://vercel.com/dashboard).
+2. Select **Framework Preset**: Next.js.
+3. (Optional) Configure environment variables if needed.
+4. Deploy.
+
+### Self-Hosting
+
+```bash
+pnpm build
+pnpm start
+```
+
+The production server will start on `http://localhost:3000` by default.
+
+---
+
+*Happy gardening!*
